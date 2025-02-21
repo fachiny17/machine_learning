@@ -1,7 +1,7 @@
 ## **Machine Learning Journey 🚀**
 
-Author: Iheanyi, Favour Chisom
-Course: Zero-to-Mastery Machine Learning
+Author: Iheanyi, Favour Chisom. 
+Course: Zero-to-Mastery Machine Learning. 
 Instructors: Daniel Bourke & Andrei Neagoie
 
 ### **📌 Overview**
