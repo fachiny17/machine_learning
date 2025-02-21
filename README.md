@@ -4,7 +4,7 @@ Author: Iheanyi, Favour Chisom
 Course: Zero-to-Mastery Machine Learning
 Instructors: Daniel Bourke & Andrei Neagoie
 
-📌 Overview
+### **📌 Overview**
 
 This repository documents my journey through the Zero-to-Mastery Machine Learning Course by Daniel Bourke and Andrei Neagoie. It includes:
 
@@ -19,7 +19,7 @@ This repository documents my journey through the Zero-to-Mastery Machine Learnin
 🤖 End-to-End Machine Learning Projects
 
 
-📂 Repository Structure
+### **📂 Repository Structure**
 
 📦 machine_learning  
 ├── 📂 sample_pro/              # Main folder containing course materials  
@@ -37,7 +37,7 @@ This repository documents my journey through the Zero-to-Mastery Machine Learnin
 ├── 📜 requirements.txt         # Dependencies for the project  
 └── 📜 README.md                # Project documentation
 
-🛠️ Technologies Used
+### **🛠️ Technologies Used**
 
 Python (NumPy, Pandas, Matplotlib, Seaborn)
 
@@ -48,7 +48,7 @@ TensorFlow & PyTorch (Deep Learning)
 Jupyter Notebooks
 
 
-📖 Course Topics Covered
+### **📖 Course Topics Covered**
 
 Data Preprocessing & Exploratory Data Analysis
 
@@ -63,7 +63,7 @@ Computer Vision & NLP
 Deployment & Production-Ready Models
 
 
-🚀 How to Use This Repository
+### **🚀 How to Use This Repository**
 
 1. Clone the repository:
 
@@ -83,15 +83,10 @@ jupyter notebook
 
 4. Explore the notebooks and projects!
 
-📌 Future Plans
+### **📌 Future Plans**
 
 Implement more real-world ML projects
 
 Optimize existing models for better performance
 
 Deploy a machine learning model
-
-
-📜 License
-
-This repository is for educational purposes. Feel free to use the code, but always credit the original course and author.
