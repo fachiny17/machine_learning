@@ -1,4 +1,4 @@
-Machine Learning Journey 🚀
+##**Machine Learning Journey 🚀**
 
 Author: Iheanyi, Favour Chisom
 Course: Zero-to-Mastery Machine Learning
