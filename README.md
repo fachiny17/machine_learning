@@ -22,11 +22,20 @@ This repository documents my journey through the Zero-to-Mastery Machine Learnin
 📂 Repository Structure
 
 📦 machine_learning  
-├── 📂 notebooks/        # Jupyter Notebooks for exercises & notes  
-├── 📂 projects/         # Machine learning mini-projects  
-├── 📂 datasets/         # Sample datasets used in projects  
-├── 📜 requirements.txt  # Dependencies for the project  
-└── 📜 README.md         # This file
+├── 📂 sample_pro/              # Main folder containing course materials  
+│   ├── 📂 matplotlib/          # Matplotlib-related notebooks and exercises  
+│   ├── 📂 numpy/               # NumPy-related notebooks and exercises  
+│   ├── 📂 pandas/              # Pandas-related notebooks and exercises  
+│   ├── 📂 projects/            # Machine learning mini-projects  
+│   ├── 📂 scikit-learn/        # Scikit-learn-related notebooks and exercises  
+│   ├── 📜 car-sales.csv        # Dataset for data analysis  
+│   ├── 📜 heart-disease.csv    # Dataset for ML model training  
+│   ├── 🖼️ heart_disease_analysis_plot.png  # Visualization example  
+│   ├── 📜 introduction_to_numpy.ipynb  # Notebook on NumPy basics  
+├── 📂 env/etc/                 # Environment-related files  
+├── 📂 .ipynb_checkpoints/       # Auto-generated Jupyter Notebook checkpoints  
+├── 📜 requirements.txt         # Dependencies for the project  
+└── 📜 README.md                # Project documentation
 
 🛠️ Technologies Used
 
