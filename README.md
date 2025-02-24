@@ -11,7 +11,7 @@ Instructors: Daniel Bourke & Andrei Neagoie
 This repository documents my journey through the Zero-to-Mastery Machine Learning Course by Daniel Bourke and Andrei Neagoie. It includes:
 
 📖 Lecture Notes
-aklf
+
 🏋️ Exercises
 
 🔬 Mini Projects
