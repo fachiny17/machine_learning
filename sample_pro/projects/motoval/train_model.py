@@ -105,9 +105,6 @@ def train_and_save_model():
     print("\nModel Comparison:")
     print(compare_metrics)
 
-    # #Train model--------------------------------------------------------------------------------------------
-    # model.fit(x_train, y_train)
-
     # Save model----------------------------------------------------------------------------------------------------
     dump(model, "models/car_price_model.joblib")
     print("Model trained and saved successfully!")
