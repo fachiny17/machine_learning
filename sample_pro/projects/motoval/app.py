@@ -8,7 +8,6 @@ app = Flask(__name__)
 # Load the model
 model = load('models/car_price_model.joblib')
 
-
 @app.route('/', methods=['GET', 'POST'])
 def home():
     if request.method == 'POST':
