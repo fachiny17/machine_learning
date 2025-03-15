@@ -5,7 +5,7 @@ import os
 
 app = Flask(__name__)
 
-# Load the model -----------------------------------------------------------------
+# Load the model ---------------------------------------------------------------------
 model = load('models/car_price_model.joblib')
 
 @app.route('/', methods=['GET', 'POST'])
