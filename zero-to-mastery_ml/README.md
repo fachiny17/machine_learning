@@ -25,7 +25,7 @@ This repository documents my journey through the Zero-to-Mastery Machine Learnin
 ### **📂 Repository Structure**
 
 📦 machine_learning  
-├── 📂 sample_pro/              # Main folder containing course materials  
+├── 📂 zero-to-mastery_ml/              # Main folder containing course materials  
 │   ├── 📂 matplotlib/          # Matplotlib-related notebooks and exercises  
 │   ├── 📂 numpy/               # NumPy-related notebooks and exercises  
 │   ├── 📂 pandas/              # Pandas-related notebooks and exercises  
