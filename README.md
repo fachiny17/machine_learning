@@ -2,8 +2,9 @@
 
 Welcome to the **Machine Learning & TensorFlow Courses Repository**! This repository contains comprehensive resources, hands-on projects, and code from two advanced machine learning courses:
 
-- **Machine Learning Mastery** – by Andrei Neagoie and Daniel Bourke  
-- **TensorFlow Developer Course** – by Zero to Mastery  
+- **DeepTech_Ready Upskilling Programme** – by 3MTT and Data Science Nigeria(DSN)  
+- **TensorFlow Developer Course** – by Zero to Mastery
+- **Machine Learning Mastery** – by Andrei Neagoie and Daniel Bourke
 
 Whether you're a beginner or an experienced developer, this repository will help you dive deep into machine learning and TensorFlow concepts.
 
@@ -12,7 +13,7 @@ Whether you're a beginner or an experienced developer, this repository will help
 ## 📂 Directory Structure
 
 ```bash
-│── deeptech_program_cohort1/               # DeepTech_Program
+│── deeptech_program_cohort1/               # DeepTech_Ready Upskilling Programme
 │
 │── tensorflow_course/               # TensorFlow Developer Course (Zero to Mastery)
 │    ├── 00_tensorflow_fundamentals.ipynb  # Fundamentals of TensorFlow (Colab Notebook)
