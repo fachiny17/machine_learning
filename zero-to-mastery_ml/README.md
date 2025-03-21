@@ -46,8 +46,6 @@ Python (NumPy, Pandas, Matplotlib, Seaborn)
 
 Scikit-Learn (Supervised & Unsupervised Learning)
 
-TensorFlow & PyTorch (Deep Learning)
-
 Jupyter Notebooks
 
 
@@ -59,18 +57,13 @@ Supervised & Unsupervised Learning
 
 Feature Engineering & Model Evaluation
 
-Deep Learning with TensorFlow
-
-Computer Vision & NLP
-
-Deployment & Production-Ready Models
 
 
 ### **🚀 How to Use This Repository**
 
 1. Clone the repository:
 
-git clone https://github.com/fachiny17/machine_learning.git
+git clone https://github.com/fachiny17/machine_learning/edit/main/zero-to-mastery_ml/README.md
 cd machine_learning
 
 
