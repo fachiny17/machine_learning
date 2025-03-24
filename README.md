@@ -4,7 +4,7 @@ Welcome to the **Machine Learning Journey Repository**! This repository contains
 
 - **DeepTech_Ready Upskilling Programme** – by 3MTT and Data Science Nigeria(DSN)  
 - **TensorFlow Developer Course** – by Zero to Mastery
-- **Machine Learning Mastery** – by Andrei Neagoie and Daniel Bourke
+- **Machine Learning Mastery** – by Andrei Neagoie and Daniel Bourke.
 
 Whether you're a beginner or an experienced developer, this repository will help you dive deep into machine learning and TensorFlow concepts.
 
