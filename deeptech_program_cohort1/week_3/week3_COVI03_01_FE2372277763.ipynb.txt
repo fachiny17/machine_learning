@@ -1,0 +1,55 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": []
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "code",
+      "source": [
+        "import torch\n",
+        "import numpy as np\n",
+        "\n",
+        "\n",
+        "def customperm(a, b, c):\n",
+        "  tensor = torch.zeros((a, b), dtype=torch.int32)  # Create a tensor of shape (a, b)\n",
+        "  for i in range(a):\n",
+        "    perm = torch.randperm(c)  # Generate a random permutation of numbers from 0 to c-1\n",
+        "    tensor[i] = perm[:b]  # Take the first 'b' elements from the permutation return tensor\n",
+        "\n",
+        "\n",
+        "print(\"Generated tensor:\")\n",
+        "print(customperm(3, 4, 20))\n",
+        "\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "xmo6EuhAWpfc",
+        "outputId": "e45d7be5-7ba4-4694-d583-c8b567675065"
+      },
+      "execution_count": 5,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Generated tensor:\n",
+            "None\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
