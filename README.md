@@ -1,6 +1,6 @@
 q# Machine Learning Journey Repository 🚀
 
-Welcome to the **Machine Learning Journey Repository**! This repository contains comprehensive resources, hands-on projects, and code from advanced machine learning courses/programs:
+Welcome to my **Machine Learning Journey Repository**! This repository contains comprehensive resources, hands-on projects, and code from advanced machine learning courses/programs:
 
 - **DeepTech_Ready Upskilling Programme** – by 3MTT and Data Science Nigeria(DSN)  
 - **TensorFlow Developer Course** – by Zero to Mastery
