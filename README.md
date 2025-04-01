@@ -1,4 +1,4 @@
-q# Machine Learning Journey Repository 🚀
+# Machine Learning Journey Repository 🚀
 
 Welcome to my **Machine Learning Journey Repository**! This repository contains comprehensive resources, hands-on projects, and code from advanced machine learning courses/programs:
 
