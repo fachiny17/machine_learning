@@ -17,7 +17,7 @@ Whether you're a beginner or an experienced developer, this repository will help
 │
 │── tensorflow_course/               # TensorFlow Developer Course (Zero to Mastery)
 │    ├── 00_tensorflow_fundamentals.ipynb  # Fundamentals of TensorFlow (Colab Notebook)
-     ├── 01_neural_network_regression_with_tensorflow.ipynb # Neural network with TensorFlow
+     ├── 01_neural_network_regression_with_tensorflow.ipynb # Neural Network Regression with TensorFlow
 │   └── README.md                         # Course-specific details
 │
 ├── zero-to-mastery_ml/                      # Machine Learning Mastery Course (Andrei Neagoie & Daniel Bourke)
