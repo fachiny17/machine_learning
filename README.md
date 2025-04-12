@@ -7,7 +7,7 @@ This repository contains comprehensive resources, hands-on projects, and code fr
 - **TensorFlow Developer Course** – by Zero to Mastery.
 - **Machine Learning Mastery** – by Andrei Neagoie and Daniel Bourke.
 
-Whether you're a beginner or an experienced developer, this repository will help you dive deep into machine learning and TensorFlow concepts.
+Whether you're a beginner or an experienced developer, this repository will help you dive deep into machine learning.
 
 
 ## 📂 Directory Structure
