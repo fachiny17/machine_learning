@@ -10,7 +10,7 @@ This repository contains comprehensive resources, hands-on projects, and code fr
 Whether you're a beginner or an experienced developer, this repository will help you dive deep into machine learning.
 
 
-## 📂 Directory Structure
+## 📂 Directory Structure:
 
 ```bash
 │── deeptech_program_cohort1/               # DeepTech_Ready Upskilling Programme
