@@ -6,7 +6,7 @@ Welcome to my **Machine Learning Journey Repository**! This repository contains 
 - **TensorFlow Developer Course** – by Zero to Mastery
 - **Machine Learning Mastery** – by Andrei Neagoie and Daniel Bourke
 
-Whether you're a beginner or an experienced developer, this repository will help you dive deep into machine learning and TensorFlow concepts.
+Whether you're a beginner or an experienced developer, this repository will help you dive deep into machine learning, deep learning, and TensorFlow concepts.
 
 
 ## 📂 Directory Structure
