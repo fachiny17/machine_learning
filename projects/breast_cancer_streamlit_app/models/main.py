@@ -49,8 +49,8 @@ def main():
     model, scaler = create_model(data)
     
     # Save the model and scaler in the "models" directory using joblib
-    dump(model, "models/logistic_regression_model.joblib")     
-    dump(scaler, "models/scaler.joblib")
+    dump(model, "../models/logistic_regression_model.joblib")     
+    dump(scaler, "../models/scaler.joblib")
 
 if __name__ == '__main__':
     main()
