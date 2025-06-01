@@ -4,7 +4,10 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, classification_report
-import pickle
+
+# Import libraries to save the model
+from joblib import dump, load
+# import pickle
 
 np.random.seed(42)  # For reproducibility
 
@@ -44,8 +47,10 @@ def main():
     data = get_clean_data()  
     
     model, scaler = create_model(data)
-     
-
+    
+    # Save the model and scaler in the "models" directory using joblib
+    dump(model, "models/logistic_regression_model.joblib")     
+    dump(scaler, "models/scaler.joblib")
 
 if __name__ == '__main__':
     main()
