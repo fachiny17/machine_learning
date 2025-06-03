@@ -17,3 +17,7 @@
 .diagnosis.malicious {
     background-color: #ff4b4b
 }
+
+.notice.important {
+    color: #ff4b4b;
+}
