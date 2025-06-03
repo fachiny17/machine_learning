@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import numpy as np
 from joblib import dump, load
 import plotly.graph_objects as go
 
@@ -57,7 +58,24 @@ def add_sidebar():
         )
     return input_dict  
 
+def get_scaled_values(input_dict):
+    data = get_clean_data()
+    X = data.drop(['diagnosis'], axis=1)
+    
+    scaled_dict = {}
+    
+    for key, value in input_dict.items():
+        max_val = X[key].max()
+        min_val = X[key].min()
+        scaled_value = (value - min_val) / (max_val - min_val)
+        scaled_dict[key] = scaled_value
+        
+    return scaled_dict
+
 def get_radar_chart(input_data):
+    
+    input_data = get_scaled_values(input_data)
+    
     categories = ['Radius', 'Texture', 'Perimeter',
                   'Smoothness', 'Compactness',
                   'Concavity', 'Concave Points',
@@ -109,6 +127,18 @@ def get_radar_chart(input_data):
     
     return fig
 
+def add_predictions(input_data):
+    model = load('../models/logistic_regression_model.joblib')
+    scaler = load('../models/scaler.joblib')
+    
+    input_array = np.array(list(input_data.values())).reshape(1, -1)
+    
+    input_array_scaled = scaler.transform(input_array)
+    
+    prediction = model.predict(input_array_scaled)
+    
+    st.write(prediction)
+    
 def main():
     st.set_page_config(
         page_title="Breast Cancer Predictor",
@@ -129,7 +159,7 @@ def main():
         radar_chart = get_radar_chart(input_data)
         st.plotly_chart(radar_chart)
     with col2:
-        st.write("this is columns 2")
+        add_predictions(input_data)
         
 if __name__ == '__main__':
     main()
