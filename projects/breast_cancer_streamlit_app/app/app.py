@@ -127,6 +127,7 @@ def get_radar_chart(input_data):
     
     return fig
 
+
 def add_predictions(input_data):
     model = load('../models/logistic_regression_model.joblib')
     scaler = load('../models/scaler.joblib')
@@ -147,7 +148,6 @@ def add_predictions(input_data):
         
     st.write("Probability of being benign: ", model.predict_proba(input_array_scaled)[0][0])
     st.write("Probability of being malicious: ", model.predict_proba(input_array_scaled)[0][1])
-    st.write("Thi app can assist medical professionals in making a diagnosis, but should not be used as a substitute for professional diagnosis.")
         
 def main():
     st.set_page_config(
@@ -163,16 +163,20 @@ def main():
     input_data = add_sidebar()
     
     with st.container():
-        st.title("Breast Cancer Predictor")
-        st.write("Please connect this app to your cytology lab to help diagnose breast cancer from your tissue sample. This app predicts using a machine learning model whether a breast mass is Benign or Malignant based on the measurements it receives from your cytosis lab. You can also update the measurements by hand using the sliders in the sidebar")
+        st.title("NucleiScan AI: Breast Cancer Predictor")
+        st.write("NucleiScan AI analyzes 30 cell nuclei characteristics from breast tissue samples to predict malignancy risk. This clinical decision-support tool evaluates mean, standard error, and worst-case measurements (including radius, concavity, and texture) to assist pathologists in rapid assessment. Features interactive sliders for manual input or lab system integration.")
         
     col1, col2 = st.columns([4,1])
     
     with col1:
         radar_chart = get_radar_chart(input_data)
         st.plotly_chart(radar_chart)
+        
+        with st.container():
+            st.markdown("*Important: This app assists medical professionals in making a diagnosis, but should not be used as a substitute for professional diagnosis*")
     with col2:
         add_predictions(input_data)
+        
         
 if __name__ == '__main__':
     main()
