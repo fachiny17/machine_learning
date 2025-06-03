@@ -137,8 +137,18 @@ def add_predictions(input_data):
     
     prediction = model.predict(input_array_scaled)
     
-    st.write(prediction)
+    st.subheader("Cell cluster prediction")
+    st.write("The cell cluster is: ")
     
+    if prediction[0] == 0:
+        st.write("Benign")
+    else:
+        st.write("Malicious")
+        
+    st.write("Probability of being benign: ", model.predict_proba(input_array_scaled)[0][0])
+    st.write("Probability of being malicious: ", model.predict_proba(input_array_scaled)[0][1])
+
+        
 def main():
     st.set_page_config(
         page_title="Breast Cancer Predictor",
