@@ -173,7 +173,7 @@ def main():
         st.plotly_chart(radar_chart)
         
         with st.container():
-            st.markdown("*<span class='notice important'>Important</span>: This app assists medical professionals in making a diagnosis, but should not be used as a substitute for professional diagnosis*", unsafe_allow_html=True)
+            st.markdown("*<span class='notice important'>Important</span>: This app assists medical professionals in making a diagnosis, but should not be used as a substitute for professional diagnosis.*", unsafe_allow_html=True)
     with col2:
         add_predictions(input_data)
         
