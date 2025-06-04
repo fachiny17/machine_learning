@@ -4,6 +4,15 @@ import numpy as np
 from joblib import dump, load
 import plotly.graph_objects as go
 
+# Importing models and libraries for the chatbot
+from langchain.llms import HuggingFaceHub
+from langchain.memory import ConversationBufferMemory
+from langchain.chains import ConversationalRetrievalChain
+from langchain.embeddings import HuggingFaceEmbeddings
+from langchain.vectorstores import FAISS
+from langchain.document_loaders import TextLoader
+import os
+
 def get_clean_data():
     data = pd.read_csv("../data/data.csv")    
     data = data.drop(['Unnamed: 32', 'id'], axis=1)    
@@ -148,6 +157,44 @@ def add_predictions(input_data):
         
     st.write("Probability of being benign: ", model.predict_proba(input_array_scaled)[0][0])
     st.write("Probability of being malicious: ", model.predict_proba(input_array_scaled)[0][1])
+
+def setup_medical_chatbot():
+    """Initialize the medical chatbot components"""
+    # Setup Hugging Face LLM (BioMistral-7B)
+    os.environ["HUGGINGFACEHUB_API_TOKEN"] = "*******"
+    
+    llm = HuggingFaceHub(
+        repo_id="BioMistral/BioMistral-7B",
+        model_kwargs={"temperature": 0.5, "max_length": 500}
+    )
+    
+    # Create simple medical knowledge base
+    medical_knowledge = """
+    Breast cancer diagnostic criteria:
+    - Malignant nuclei: Irregular borders, high nuclear-cytoplasmic ratio
+    - Key metrics: Radius > 15μm, Concavity > 0.08, Fractal Dimension < 0.065
+    Common terms:
+    - DCIS: Ductal carcinoma in situ (non-invasive)
+    - IDC: Invasive ductal carcinoma
+    """
+    
+    # Initialize conversation memory
+    memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
+    
+    return llm, memory, medical_knowledge
+
+def medical_chat(question, llm, memory, context=""):
+    """Generate medical responses with safety checks"""
+    if any(word in question.lower() for word in ["emergency", "pain", "urgent"]):
+        return "Please contact your healthcare provider immediately for urgent concerns."
+    
+    prompt = f"""As a cytology specialist, answer concisely (2-3 sentences max):
+    Context: {context}
+    Question: {question}
+    Answer (professional tone):"""
+    
+    response = llm(prompt)
+    return response.strip()
         
 def main():
     st.set_page_config(
@@ -162,6 +209,10 @@ def main():
     
     input_data = add_sidebar()
     
+    # Initialize chatbot (only once)
+    if "chatbot" not in st.session_state:
+        st.session_state.llm, st.session_state.memory, st.session_state.medical_kb = setup_medical_chatbot()
+    
     with st.container():
         st.title("NucleiScan AI: Breast Cancer Predictor")
         st.write("NucleiScan AI analyzes 30 cell nuclei characteristics from breast tissue samples to predict malignancy risk. This clinical decision-support tool evaluates mean, standard error, and worst-case measurements (including radius, concavity, and texture) to assist pathologists in rapid assessment. Features interactive sliders for manual input or lab system integration.")
@@ -174,8 +225,39 @@ def main():
         
         with st.container():
             st.markdown("*<span class='notice important'>Important</span>: This app assists medical professionals in making a diagnosis, but should not be used as a substitute for professional diagnosis.*", unsafe_allow_html=True)
+
     with col2:
+        # ---CHATBOT SECTION -----
+        st.markdown("### Medical Query Assistant")
+        st.caption("Ask about your results or general breast cancer questions")
+        
+        # Display chat history
+        if "messages" not in st.session_state:
+            st.session_state.messages = []
+            
+        for msg in st.session_state.messages:
+            st.chat_messages(msg["role"]).write(msg["content"])
+            
+        # Chat input
+        if prompt := st.chat_input("Type your question..."):
+            st.session_state.messages.append({"role": "user", "content": prompt})
+            with st.spinner("Consulting NucleiScan AI..."):
+                
+                # Generate response with current metrics as context
+                current_metrics = f"Radius: {input_data['radius_mean']:.2f}, Concavity: {input_data['concavity_mean']:.2f}"
+                
+                response = medical_chat(
+                    prompt,
+                    st.session_state.llm,
+                    st.session_state.memory,
+                    context=current_metrics
+                )
+                
+            st.session_state.messages.append({"role": "assistant", "content": response})
+            st.rerun()
+               
         add_predictions(input_data)
+        
         
         
 if __name__ == '__main__':
