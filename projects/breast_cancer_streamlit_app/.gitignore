@@ -2,7 +2,6 @@
 secret.toml
 
 nuclei.py
-test.py
 
 *.txt
 *.json

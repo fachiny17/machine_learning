@@ -10,6 +10,7 @@ __pycache__/
 venv/
 env/
 *.env
+.env
 
 # Machine learning artifacts
 *.h5
@@ -40,3 +41,11 @@ Thumbs.db
 .idea/
 *.swp
 *.swo
+
+.streamlit
+
+nuclei.py
+test.py
+*.json
+
+*.txt
