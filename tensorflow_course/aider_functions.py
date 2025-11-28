@@ -64,9 +64,7 @@ def walk_through_dir(dir_path):
     print(f"There are {len(dirnames)} directories and {len(filenames)} images in '{dirpath}'.")
     
     
-
 import datetime
-
 def create_tensorboard_callback(dir_name, experiment_name):
   """
   Creates a TensorBoard callback instand to store log files.
