@@ -25,4 +25,41 @@ def load_and_prep_image(filename, img_shape=224, scale=True):
     else:
         return img
     
+
+# Create function to unzip a zipfile into current working directory 
+# (since we're going to be downloading and unzipping a few files)
+import zipfile
+
+def unzip_data(filename):
+  """
+  Unzips filename into the current working directory.
+
+  Args:
+    filename (str): a filepath to a target zip folder to be unzipped.
+  """
+  zip_ref = zipfile.ZipFile(filename, "r")
+  zip_ref.extractall()
+  zip_ref.close()
+
+    
+
+# Walk through an image classification directory and find out how many files (images)
+# are in each subdirectory.
+import os
+
+def walk_through_dir(dir_path):
+  """
+  Walks through dir_path returning its contents.
+
+  Args:
+    dir_path (str): target directory
+  
+  Returns:
+    A print out of:
+      number of subdiretories in dir_path
+      number of images (files) in each subdirectory
+      name of each subdirectory
+  """
+  for dirpath, dirnames, filenames in os.walk(dir_path):
+    print(f"There are {len(dirnames)} directories and {len(filenames)} images in '{dirpath}'.")
     
