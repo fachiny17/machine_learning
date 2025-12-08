@@ -143,3 +143,12 @@ def process_dataset(input_dir, output_dir, detector):
 
         print(f"[DONE] Finished {student_name}.\n")
 
+
+import cv2
+# Function to load image for the face detection and cropping
+def load_image(img_path):
+    """Reads an image from disk and returns it in BGR format."""
+    img = cv2.imread(img_path)
+    if img is None:
+        print(f"Warning: could not load image at {img_path}")
+    return img
