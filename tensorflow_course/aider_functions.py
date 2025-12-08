@@ -82,3 +82,64 @@ def create_tensorboard_callback(dir_name, experiment_name):
   )
   print(f"Saving TensorBoard log files to: {log_dir}")
   return tensorboard_callback
+
+
+# aider function to crop faces from an image
+def detect_and_crop_faces(image, detector):
+    """
+    Takes an image and YOLO detector.
+    Returns a list of cropped face images.
+    """
+    results = detector(image)
+    crops = []
+
+    for box in results[0].boxes.xyxy:
+        x1, y1, x2, y2 = map(int, box)
+        face = image[y1:y2, x1:x2]
+        
+        # Skip empty crops
+        if face.size > 0:
+            crops.append(face)
+
+    return crops
+
+# Create output directory/folder if it doesn't exist
+def create_folder(path):
+    """Creates a folder if it doesn't exist."""
+    if not os.path.exists(path):
+        os.makedirs(path)
+
+# Main preprocessing function
+def process_dataset(input_dir, output_dir, detector):
+    """
+    Loops through each student's folder,
+    detects faces in each image,
+    and saves cropped faces.
+    """
+    for student_name in os.listdir(input_dir):
+        student_input_folder = os.path.join(input_dir, student_name)
+        student_output_folder = os.path.join(output_dir, student_name)
+
+        create_folder(student_output_folder)
+
+        print(f"[INFO] Processing student: {student_name}...")
+
+        for img_file in os.listdir(student_input_folder):
+            img_path = os.path.join(student_input_folder, img_file)
+            image = load_image(img_path)
+
+            if image is None:
+                continue
+
+            face_crops = detect_and_crop_faces(image, detector)
+
+            # Save all detected face crops
+            for i, face in enumerate(face_crops):
+                save_path = os.path.join(
+                    student_output_folder,
+                    f"{os.path.splitext(img_file)[0]}_crop{i}.jpg"
+                )
+                cv2.imwrite(save_path, face)
+
+        print(f"[DONE] Finished {student_name}.\n")
+
